@@ -14,6 +14,7 @@ using std::cout; using std::cin; using std::getline;
 
 std::string entry = "", ticketID, prsnCd;
 std::size_t pos;
+int pCode;
 
 int tCnt = 0, tSales = 0, tInfnt = 0, tCld = 0, tTeen = 0, tAdlt = 0;
 
@@ -70,23 +71,26 @@ input:
 			ERROR
 			continue;
 		}
+				
+		pCode = std::stoi(prsnCd)
 
-
-		switch (std::stoi(prsnCd))
+		switch (pCode)
 		{
 		case 1:
-			++tInfnt; tSales += 10;
+			++tInfnt; 
+			tSales += 10;
 			break;
 		case 2:
-			++tCld; tSales += 5;
+			++tCld;
+			tSales += 5;
 			break;
 		case 3:
-			++tTeen; tSales += 20;
+			++tTeen;
+			tSales += 20;
 			break;
 		case 4:
-			++tAdlt; tSales += 20;
-			break;
-		default:
+			++tAdlt; 
+			tSales += 20;
 			break;
 		}
 
@@ -94,7 +98,8 @@ input:
 	}
 
 
-	//Displays total numbers of ppl & total amount of ticket sales, how many infants, childern, teenagers, adults
+	// Displays the total number of people, total amount of ticket sales and lists 
+	// the number of infants, childern, teenagers, adults
 	cout << "\n" << TAB << "|TOTAL NO OF PEOPLE" << std::setw(38) << tCnt << "|\n"
 		<< TAB << "|TOTAL AMOUNT OF TICKET SALES" << std::setw(28) << tSales << "|\n"
 		<< TAB << "|NO OF INFANTS-01" << std::setw(40) << tInfnt << "|\n"
