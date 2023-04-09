@@ -30,10 +30,10 @@ You can clone the public repository:
 ```console
 $ git clone https://github.com/oddegen/FOP_GRP_WORK-GRP_06.git
 ```
-Once you have a copy of the source, you can build each project using MSBUILD or run it inside a C++ IDE:
+Once you have a copy of the source, you can build each project or run it inside a C++ IDE:
 
 ```console
-$ cd FOP_GRP_WORK-GRP_06/project-work/$project/src
+$ cd FOP_GRP_WORK-GRP_06/project-work/Q#$project/
 $ "CODE FOR BULID"
 $ $project
 ```
