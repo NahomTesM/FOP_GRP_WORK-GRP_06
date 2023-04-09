@@ -72,7 +72,7 @@ input:
 			continue;
 		}
 				
-		pCode = std::stoi(prsnCd)
+		pCode = std::stoi(prsnCd);
 
 		switch (pCode)
 		{
