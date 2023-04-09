@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+./FOP_GRP_WORK-GRP_06.sln
+./FOP_GRP_WORK-GRP_06/FOP_GRP_WORK-GRP_06.vcxproj
+./FOP_GRP_WORK-GRP_06/FOP_GRP_WORK-GRP_06.vcxproj.filters
