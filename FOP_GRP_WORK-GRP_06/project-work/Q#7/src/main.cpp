@@ -127,12 +127,13 @@ int main(){
         cout << "The year is not valid.";
      }
 
-     int sum = YEAR;
+     
      if ((valid)&&(leapYear)){
         for (int j = 0;j<20;j++){
-            sum = sum + 4;
-            cout << sum << ",";
+            YEAR = YEAR + 4;
+            cout << YEAR << ",";
         }
+
      }
 
    return 0;
