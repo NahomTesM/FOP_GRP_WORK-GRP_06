@@ -5,7 +5,9 @@
 #include <limits>
 
 #define ERROR cin.clear(); \
-			  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			  cin.ignore \
+			  (std::numeric_limits<std::streamsize>::max(),  \
+			  '\n');
 #define TAB "\t\t\t"
 
 using std::cout; using std::cin; using std::getline;
