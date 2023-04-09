@@ -62,7 +62,6 @@ int main(){
     }else{
         cout << "The year is not leap year.";
     }
-    bool valid = true;
 
      if ((YEAR>=1880)&&(YEAR<=9999)){
         cout << "The year is valid.";
@@ -72,7 +71,6 @@ int main(){
                 if ((MONTH==1)||(MONTH==3)||(MONTH==5)||(MONTH==7)||(MONTH==8)||(MONTH==10)||(MONTH==12)){
                     if ((DAY>=1)&&(DAY>=31)){
                       cout << "The day is valid.";
-                      valid;
                     }else{
                       cout << "The day is not valid.";
                     }
@@ -80,7 +78,6 @@ int main(){
                 else if((MONTH==4)||(MONTH==6)||(MONTH==9)||(MONTH==11)){
                     if ((DAY>=1)&&(DAY<=30)){
                         cout << "The day is valid.";
-                        valid;
                     }else{
                         cout << "The day is not valid.";
                     }
@@ -88,7 +85,6 @@ int main(){
                 else if(MONTH==02){
                     if((DAY>=1)&&(DAY<=29)){
                         cout << "The day is valid.";
-                        valid;
                     }else{
                         cout << "The day is not valid.";
                     }
@@ -98,7 +94,6 @@ int main(){
             if ((MONTH==1)||(MONTH==3)||(MONTH==5)||(MONTH==7)||(MONTH==8)||(MONTH==10)||(MONTH==12)){
                     if ((DAY>=1)&&(DAY>=31)){
                       cout << "The day is valid.";
-                      valid;
                     }else{
                       cout << "The day is not valid.";
                     }
@@ -106,7 +101,6 @@ int main(){
                 else if((MONTH==4)||(MONTH==6)||(MONTH==9)||(MONTH==11)){
                     if ((DAY>=1)&&(DAY<=30)){
                         cout << "The day is valid.";
-                        valid;
                     }else{
                         cout << "The day is not valid.";
                     }
@@ -114,7 +108,6 @@ int main(){
                 else if(MONTH==02){
                     if((DAY>=1)&&(DAY<=28)){
                         cout << "The day is valid.";
-                        valid;
                     }else{
                         cout << "The day is not valid.";
                     }
@@ -126,15 +119,5 @@ int main(){
      }else{
         cout << "The year is not valid.";
      }
-
-     
-     if ((valid)&&(leapYear)){
-        for (int j = 0;j<20;j++){
-            YEAR = YEAR + 4;
-            cout << YEAR << ",";
-        }
-
-     }
-
    return 0;
 }
