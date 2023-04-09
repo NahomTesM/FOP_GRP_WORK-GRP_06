@@ -8,36 +8,25 @@
 			  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 #define TAB "\t\t\t"
 
-
-
-namespace params {
-	enum {
-		infant = 1,
-		child,
-		teenager,
-		adult
-	};
-	std::string entry = "", ticketID, prsnCd;
-	std::size_t pos;
-
-	int tCnt = 0, tSales = 0, tInfnt = 0, tCld = 0, tTeen = 0, tAdlt = 0;
-
-}	//namespace params
-
 using std::cout; using std::cin; using std::getline;
+
+std::string entry = "", ticketID, prsnCd;
+std::size_t pos;
+
+int tCnt = 0, tSales = 0, tInfnt = 0, tCld = 0, tTeen = 0, tAdlt = 0;
+
 
 int main() {
 
 	cout << "Enter (FORMAT:TICKETNo_PRSNCode) or -1 TO EXIT AND DISPLAY THE OUTPUT\n"
-		<< "eg: ODF023_2 or AER450_03, NOTE THAT TICKETNo must be of length 6 and Alphanumeric literal.\n";
+		 << "eg: ODF023_2 or AER450_03, NOTE THAT TICKETNo must be of length 6 and Alphanumeric literal.\n";
 
 input:
 	while (true)
 	{
-		using namespace params;
 
 		ticketID = ""; prsnCd = "";
-		cin >> entry;
+		getline(cin, entry);
 
 		//Exit
 		if (entry == "-1") {
@@ -47,7 +36,7 @@ input:
 		if (entry.size() < 8 || *(entry.begin() + 6) != '_') {
 			cout << "ERROR: INCORRECT TICKET_NO, TRY AGAIN\n";
 			ERROR
-				continue;
+			continue;
 		}
 
 		//Parse
@@ -71,28 +60,28 @@ input:
 		{
 			cout << "ERROR: INVALID PERSON_CODE, TRY AGAIN\n";
 			ERROR
-				continue;
+			continue;
 		}
 
-		if (pos < prsnCd.size() || std::stoi(prsnCd) > adult || std::stoi(prsnCd) < infant) {
+		if (pos < prsnCd.size() || std::stoi(prsnCd) > 4 || std::stoi(prsnCd) < 1) {
 			cout << "ERROR: INVALID PERSON_CODE, TRY AGAIN\n";
 			ERROR
-				continue;
+			continue;
 		}
 
 
 		switch (std::stoi(prsnCd))
 		{
-		case infant:
+		case 1:
 			++tInfnt; tSales += 10;
 			break;
-		case child:
+		case 2:
 			++tCld; tSales += 5;
 			break;
-		case teenager:
+		case 3:
 			++tTeen; tSales += 20;
 			break;
-		case adult:
+		case 4:
 			++tAdlt; tSales += 20;
 			break;
 		default:
@@ -104,15 +93,15 @@ input:
 
 
 	//Displays total numbers of ppl & total amount of ticket sales, how many infants, childern, teenagers, adults
-	cout << "\n" << TAB << "|TOTAL NO OF PEOPLE" << std::setw(38) << params::tCnt << "|\n"
-		<< TAB << "|TOTAL AMOUNT OF TICKET SALES" << std::setw(28) << params::tSales << "|\n"
-		<< TAB << "|NO OF INFANTS-01" << std::setw(40) << params::tInfnt << "|\n"
-		<< TAB << "|NO OF CHILDREN-02" << std::setw(39) << params::tCld << "|\n"
-		<< TAB << "|NO OF TEENAGERS-03" << std::setw(38) << params::tTeen << "|\n"
-		<< TAB << "|NO OF ADULTS-04" << std::setw(41) << params::tAdlt << "|\n";
+	cout << "\n" << TAB << "|TOTAL NO OF PEOPLE" << std::setw(38) << tCnt << "|\n"
+		<< TAB << "|TOTAL AMOUNT OF TICKET SALES" << std::setw(28) << tSales << "|\n"
+		<< TAB << "|NO OF INFANTS-01" << std::setw(40) << tInfnt << "|\n"
+		<< TAB << "|NO OF CHILDREN-02" << std::setw(39) << tCld << "|\n"
+		<< TAB << "|NO OF TEENAGERS-03" << std::setw(38) << tTeen << "|\n"
+		<< TAB << "|NO OF ADULTS-04" << std::setw(41) << tAdlt << "|\n";
 
 	ERROR
-		cin.get();
+	cin.get();
 
 	return 0;
 }
