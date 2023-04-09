@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <cctype>
+#include <limits>
 
 #define ERROR cin.clear(); \
 			  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
