@@ -29,7 +29,7 @@ input:
 	{
 
 		ticketID = ""; prsnCd = "";
-		getline(cin, entry);
+		cin >> entry;
 
 		//Exit
 		if (entry == "-1") {
