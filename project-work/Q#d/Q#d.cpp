@@ -1,5 +1,5 @@
 #include <iostream>
-using std::cout;
+using std::cout; using std::cin;
 int i, j, range=8;	//control the printed values
 
 
@@ -35,5 +35,6 @@ int main() {
 
 	}
    
+cin.get();
 return 0;
 }
