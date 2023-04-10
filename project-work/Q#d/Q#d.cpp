@@ -1,40 +1,23 @@
 #include <iostream>
-using std::cout; using std::cin;
-int i, j, range=8;	//control the printed values
+#include <cmath>
+using namespace std;
 
+int main()
+{
+    for (int i = -7; i <= 7; i++)
+    {
+        for (int j = 0; j < 7 - abs(i); j++)
+            cout << "  ";
+        for (int k = 65; k <= 65 + abs(i); k++)
+            cout << char(k) << " ";
+        for (int n = 65 + abs(i) - 1; n >= 65; n--)
+            cout << char(n) << " ";
 
+        cout
+            << endl;
+    }
 
-int main() {
-	
-	for (i = 1; i <= range; i++) {
-		for (j = 1; j <= i - 1; j++) {
-			cout << "  ";
-		}
-		for (j = i; j <= range; j++) {
-			cout << (char)(65 + j - i) << " ";
-		}
-		for (j = range - 1 - i; j >= 0; j--) {
-			cout << (char)(65 + j) << " ";
-		}
-
-		cout << "\n";
-	}
-
-	for (i = 1; i <= range - 1; i++) {
-		for (j = 1; j <= range - 1 - i; j++) {
-			cout << "  ";
-		}
-		for (j = 0; j <= i; j++) {
-			cout << (char)(65 + j) << " ";
-		}
-		for (j = i - 1; j >= 0; j--) {
-			cout << (char)(65 + j) << " ";
-		}
-
-		cout << "\n";
-
-	}
-   
-cin.get();
+    return 0;
+}
 return 0;
 }
